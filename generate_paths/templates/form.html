@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        body{
+            background:
+        url(../../media/start_bg.jpg)
+        }
+        #footer {
+            position: fixed;
+            /* padding: 10px 10px 0px 10px; */
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/
+            height: 40px;
+            background: black;
+        }
+        #headings{
+            position: fixed; 
+            width: 100%;
+            height: 50px; 
+        }
+        .form-style-3{
+            margin-left: 15%;
+            max-width: 70%;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        }
+        .form-style-3 label{
+            display:block;
+            margin-bottom: 10px;
+        }
+        .form-style-3 label > span{
+            float: left;
+            width: 350px;
+            color: cyan;
+            font-weight: bold;
+            font-size: 13px;
+            text-shadow: 1px 1px 1px #282825;
+        }
+        .form-style-3 fieldset{
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            margin: 0px 0px 10px 0px;
+            border: 1px solid black;
+            padding: 20px;
+            background: black;
+            box-shadow: inset 0px 0px 15px black;
+            -moz-box-shadow: inset 0px 0px 15px black;
+            -webkit-box-shadow: inset 0px 0px 15px black;
+            opacity: 0.85;
+        }
+        .form-style-3 fieldset legend{
+            color: cyan;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-radius: 5px 5px 0px 0px;
+            -webkit-border-radius: 5px 5px 0px 0px;
+            -moz-border-radius: 5px 5px 0px 0px;
+            background: black;
+            padding: 0px 8px 3px 8px;
+            box-shadow: -0px -1px 2px black;
+            -moz-box-shadow:-0px -1px 2px black;
+            -webkit-box-shadow:-0px -1px 2px black;
+            font-weight: bolder;
+            font-size: 20px;
+            opacity: 1;
+        }
+        .form-style-3 textarea{
+            width:250px;
+            height:100px;
+        }
+        .form-style-3 input[type=text],
+        .form-style-3 input[type=date],
+        .form-style-3 input[type=datetime],
+        .form-style-3 input[type=number],
+        .form-style-3 input[type=search],
+        .form-style-3 input[type=time],
+        .form-style-3 input[type=url],
+        .form-style-3 input[type=email],
+        .form-style-3 select, 
+        .form-style-3 textarea{
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border: 1px solid cyan;
+            outline: none;
+            color: cyan;
+            padding: 5px 8px 5px 8px;
+            box-shadow: inset 1px 1px 4px black;
+            -moz-box-shadow: inset 1px 1px 4px black;
+            -webkit-box-shadow: inset 1px 1px 4px black;
+            background: black;
+            width:98%;
+        }
+        .form-style-3  input[type=submit],
+        .form-style-3  input[type=button]{
+            background: black;
+            border: 1px solid cyan;
+            padding: 5px 15px 5px 15px;
+            color: cyan;
+            box-shadow: inset -1px -1px 3px black;
+            -moz-box-shadow: inset -1px -1px 3px black;
+            -webkit-box-shadow: inset -1px -1px 3px black;
+            border-radius: 3px;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;	
+            font-weight: bold;
+            width: 100%;
+        }
+        .required{
+            color:red;
+            font-weight:normal;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownian Motion</title>
+</head>
+<body>
+    <div style = "position: relative;
+    min-height: 100vh;">
+        <div style="padding-bottom: 2.5rem;">
+            <div id = "headings">
+            <h2 style="text-align: center; color: cyan">Brownian Motion Plotter</h2>
+        </div>
+            
+            <div class="form-style-3">
+                <form action = "/output/" method = "POST">
+                    {% csrf_token %}
+                    <br>
+                    <br>
+                    <fieldset><legend>Simple Brownian Motion</legend>
+                        <label for="field6"><span>Ending time<span class="required">*</span></span><input type="number" min="0" class="input-field" name="time2" value="5" step="0.0000001" /></label>
+                        <label for="field7"><span>Number of paths<span class="required">*</span></span><input type="number" min="2" class="input-field" name="num_paths1" value="10" /></label>
+                        </select></label>
+
+                    </fieldset>
+
+                    <fieldset><legend>Geometric Brownian Motion</legend>
+                    <label for="field1"><span>Ending time<span class="required">*</span></span><input type="number" min="0" class="input-field" name="time1" value="5" step="0.0000001" /></label>
+                    <label for="field2"><span>Initial Value<span class="required">*</span></span><input type="number" class="input-field" name="init_val1" value="1" step="0.0000001" /></label>
+                    <label for="field3"><span>Drift Parameter<span class="required">*</span></span><input type="number" class="input-field" name="mu" value="0.06" step="0.0000001" /></label>
+                    <label for="field4"><span>Volatility Parameter<span class="required">*</span></span><input type="number" class="input-field" name="sigma" value="0.3" step="0.0000001" /></label>
+                    <label for="field5"><span>Number of paths<span class="required">*</span></span><input type="number" min="2" class="input-field" name="num_paths2" value="5" /></label>
+
+                    </select></label>
+                    </fieldset>
+                    
+
+                    <label><span> </span><input type="submit" value="Submit" /></label>
+
+                </form>
+            </div>
+        </div>
+        <div id="footer">
+            <h5 style="color: gray; text-align: center;">Developed by <a href="https://github.com/banerjeepragyan" target="_blank" style="color: gray;">Pragyan Banerjee</a> (200123080)</h5>
+            
+        </div>
+    </div>
+</body>
+
+
+</html>
