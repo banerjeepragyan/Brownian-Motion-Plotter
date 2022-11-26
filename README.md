@@ -3,7 +3,7 @@
 This project plots two graphs  
     1. Simple Brownian Motion  
     2. Geometric Brownian Motion  
-by taking necessary parameters as inputs.
+by taking necessary parameters as inputs.  
 
 It also outputs the theoretical and experimental means and variances.
 
