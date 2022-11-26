@@ -2,9 +2,9 @@
 
 This project plots two graphs
 
-    -> Simple Brownian Motion
+    1. Simple Brownian Motion
     
-    -> Geometric Brownian Motion
+    2. Geometric Brownian Motion
 by taking necessary parameters as inputs.
 
 It also outputs the theoretical and experimental means and variances.
