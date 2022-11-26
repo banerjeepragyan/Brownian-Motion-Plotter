@@ -1,6 +1,7 @@
 # Brownian-Motion-Plotter
 
 This project plots two graphs  
+
     1. Simple Brownian Motion  
     2. Geometric Brownian Motion  
 by taking necessary parameters as inputs.  
