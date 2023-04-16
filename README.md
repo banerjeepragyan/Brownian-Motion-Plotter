@@ -37,7 +37,11 @@ The project can be viewed [here](https://bit.ly/ma323_brownian_motion)
 
 Input the values and click on 'SUBMIT'
 
+![image](https://user-images.githubusercontent.com/88557062/232316067-65fe6f6c-88d5-4440-a69e-dc7431211821.png)
+
 It also outputs the theoretical and experimental means and variances.
+
+![image](https://user-images.githubusercontent.com/88557062/232316120-77fc52d2-2a8d-4e44-9b65-591ac47faa8a.png)
 
 ## How to run on PC
 
